@@ -15,7 +15,7 @@ Experimental and Development Packages for Leraniode/ projects
 ## x-py
 > Experimental and development Python packages for Leraniode Projects
 
-![python](https://img.shields.io/badge/python-3.10%2B=-blue)
+![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-experimental-orange)
 
@@ -55,7 +55,7 @@ All projects under **x-py** are:
 
 If you have suggestions, feedback, or ideas for new experimental packages or improvements, join the discussion:
 
-- 💬 [Leraniode Discussions](https://github.com/leraniode/discussions)
+- 💬 [Leraniode Discussions](https://github.com/leraniode/x-py/discussions)
 
 ---
 
