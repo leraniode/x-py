@@ -4,12 +4,7 @@ import sys
 import pathlib
 import pytest
 
-# Ensure the package in `choco/src` is importable during tests
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-SRC = ROOT / "src"
-sys.path.insert(0, str(SRC))
-
-from src.choco import Events, Event, on, after
+from choco import Events, Event, on, after
 
 
 def test_basic_event():

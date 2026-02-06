@@ -18,6 +18,16 @@ class Dispatcher:
         self._queued_emissions: list[tuple[str, dict[str, Any]]] = []
 
     def dispatch(self, event_name: str, data: dict[str, Any]) -> None:
+        """Dispatch ``event_name`` with ``data`` synchronously.
+
+        Creates an :class:`Event` for ``event_name`` and runs all bound
+        "on" actions first. If an "on" action raises an exception the
+        exception is printed and re-raised to surface the failure. After
+        running "on" actions, all "after" actions are executed; exceptions
+        raised by "after" actions are logged but do not stop subsequent
+        after-actions or queued emissions.
+        """
+
         event = Event(event_name, data)
 
         for action in self._handler.get_on_actions(event_name):
@@ -46,4 +56,11 @@ class Dispatcher:
             self.dispatch(name, payload)
 
     def queue_emission(self, event_name: str, data: dict[str, Any]) -> None:
+        """Queue an emission to be dispatched after the current dispatch
+
+        This is useful when handlers want to schedule events to be emitted
+        once the current event processing completes. Queued emissions are
+        processed in FIFO order by the running dispatcher.
+        """
+
         self._queued_emissions.append((event_name, data))

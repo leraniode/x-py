@@ -33,7 +33,19 @@ class Event:
             raise TypeError(f"Event.data must be dict, got {type(self.data)}")
 
     def __getitem__(self, key: str) -> Any:
+        """Return the value for ``key`` from the event data.
+
+        Allows event instances to be accessed like mappings: ``event["foo"]``.
+        Raises ``KeyError`` if the key is not present.
+        """
+
         return self.data[key]
 
     def get(self, key: str, default: Any = None) -> Any:
+        """Return the value for ``key`` if present, otherwise ``default``.
+
+        This mirrors the mapping ``get`` API and is a safe way to fetch
+        optional values from the event payload.
+        """
+
         return self.data.get(key, default)

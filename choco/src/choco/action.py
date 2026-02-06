@@ -31,6 +31,11 @@ ActionFunc = Callable[["Event"], None]
 
 def on(events: "Events", event_name: str):
     def decorator(action: ActionFunc) -> ActionFunc:
+        """Bind ``action`` as an "on" action for ``event_name`` on ``events``.
+
+        The decorated function will be called with an :class:`Event` instance
+        when ``event_name`` is emitted via the given ``events`` instance.
+        """
         events.bind_on_action(event_name, action)
         return action
     return decorator
@@ -38,6 +43,12 @@ def on(events: "Events", event_name: str):
 
 def after(events: "Events", event_name: str):
     def decorator(action: ActionFunc) -> ActionFunc:
+        """Bind ``action`` as an "after" action for ``event_name`` on ``events``.
+
+        The decorated function will be called with an :class:`Event` instance
+        after the event has been processed (i.e., after any "on" actions
+        and the main event dispatch logic have run).
+        """
         events.bind_after_action(event_name, action)
         return action
     return decorator

@@ -43,7 +43,7 @@ All projects under **x-py** are:
 
 ## Projects
 
-- [**`Choco`**](/choco/): A little flavoured events and action module
+- [**`Choco`**](/choco/): A little flavoured events and action module 🍫
 
 ---
 

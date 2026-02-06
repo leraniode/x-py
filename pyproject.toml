@@ -1,5 +1,6 @@
 [project]
 name = "x-py"
+version = "1.0"
 description = "experimental python packages for Leraniode/ projects"
 readme = "README.md"
 requires-python = ">=3.10"
