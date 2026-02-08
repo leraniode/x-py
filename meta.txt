@@ -28,6 +28,14 @@ projects:
     language: python
     description: Fast, beautiful event system for Python.
 
+  logically:
+    codename: logically
+    display_name: Logically
+    version: 0.1.0
+    status: experimental
+    language: python
+    description: Logic engine for conditions, rules, decisions, graphs, and more.
+
 metadata:
   license: MIT
   python_min: "3.10"

@@ -44,6 +44,7 @@ All projects under **x-py** are:
 ## Projects
 
 - [**`Choco`**](/choco/): A little flavoured events and action module 🍫
+- [**`Logically`**](/logically/): A logic-construction toolkit for building logic, logically 🤔.
 
 ---
 

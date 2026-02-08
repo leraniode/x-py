@@ -10,4 +10,5 @@ dependencies = []
 # Experimental subprojects live here
 members = [
     "choco",
+    "logically",
 ]
