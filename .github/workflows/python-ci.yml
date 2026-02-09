@@ -8,11 +8,11 @@ on:
 
 jobs:
   logically:
-    uses: leraniode/.github/workflows/python-ci.yml@main
+    uses: leraniode/.github/.github/workflows/python-ci.yml@main
     with:
       package_path: src/logically
 
   choco:
-    uses: leraniode/.github/workflows/python-ci.yml@main
+    uses: leraniode/.github/.github/workflows/python-ci.yml@main
     with:
       package_path: src/choco
