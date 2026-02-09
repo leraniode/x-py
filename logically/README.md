@@ -39,7 +39,7 @@ You define *what* logic means — not *how* it runs.
 A single logical check.
 
 ```python
-from logically.condition import Condition
+from logically import Condition
 
 is_adult = Condition(
     name="age",
@@ -53,7 +53,7 @@ is_adult = Condition(
 A group of conditions evaluated together.
 
 ```python
-from logically.rule import Rule
+from logically import Rule
 
 access_rule = Rule(
     name="access_allowed",
@@ -68,7 +68,7 @@ Rules return boolean outcomes.
 A rule paired with an optional action.
 
 ```python
-from logically.decision import Decision
+from logically import Decision
 
 decision = Decision(
     name="grant_access",

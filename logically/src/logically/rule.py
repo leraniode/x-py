@@ -4,7 +4,7 @@ Rule module - encapsulates a logical rule.
 A Rule evaluates a set of conditions and produces a boolean outcome.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Callable, Optional, Any, List
 from .condition import Condition
 from .types import Context
