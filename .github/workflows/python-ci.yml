@@ -1,18 +1,16 @@
-name: Python CI
+name: Python Workspace CI
 
 on:
   push:
-    branches: [main]
   pull_request:
-    branches: [main]
 
 jobs:
   logically:
     uses: leraniode/.github/.github/workflows/python-ci.yml@main
     with:
-      package_path: src/logically
+      package_path: logically
 
   choco:
     uses: leraniode/.github/.github/workflows/python-ci.yml@main
     with:
-      package_path: src/choco
+      package_path: choco

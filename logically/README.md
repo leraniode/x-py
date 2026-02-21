@@ -1,7 +1,7 @@
 <p align="left">
-  <img src="https://raw.githubusercontent.com/leraniode/.github/main/assets/images/logicallyproductimage.png"
+  <img src="https://raw.githubusercontent.com/leraniode/.github/main/assets/images/logicallyproductimage.svg"
        alt="logically product image"
-       width="300" />
+       width="600" />
 </p>
 
 # logically 🤔
@@ -76,7 +76,9 @@ decision = Decision(
     action=lambda ctx: "Access granted"
 )
 
-result = decision.execute(age=21)
+result = decision.execute({
+    "age": 21
+})
 ```
 
 ### Graph (advanced)
@@ -84,6 +86,33 @@ result = decision.execute(age=21)
 Graphs allow composing rules and decisions into inspectable logical flows.
 
 > Graphs describe structure — not execution engines.
+
+## Complete Example
+
+```python
+from logically import Condition, Rule, Decision
+
+is_adult = Condition(
+    name="age",
+    rule=lambda v: v >= 18
+)
+
+rule = Rule(
+    name="adult_rule",
+    conditions=[is_adult]
+)
+
+decision = Decision(
+    name="access",
+    rule=rule,
+    action=lambda ctx: "Access granted"
+)
+
+result = decision.execute({
+    "age": 21
+})
+
+print(result)
 
 ## Design Principles
 
